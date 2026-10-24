@@ -1,0 +1,128 @@
+
+/* -----------------------------------------------------
+   METRIC CARDS
+   ----------------------------------------------------- */
+
+[data-testid="stMetric"] {
+    position: relative;
+    overflow: hidden;
+    padding: 22px 22px 20px;
+    background: var(--surface, #1a2642);
+    border: 1px solid var(--mist, rgba(255, 255, 255, 0.1));
+    border-radius: var(--radius-lg, 16px);
+    box-shadow: var(--shadow-sm, 0 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+[data-testid="stMetric"]::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #a78bfa, #22d3ee);
+}
+
+[data-testid="stMetricLabel"],
+[data-testid="stMetricLabel"] p {
+    color: #c4cce0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+[data-testid="stMetricValue"] {
+    color: #f3f6ff;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+}
+
+[data-testid="stMetricDelta"] {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* -----------------------------------------------------
+   CONTENT CARDS
+   ----------------------------------------------------- */
+
+[data-testid="stVerticalBlockBorderWrapper"] {
+    background: var(--surface, #1a2642);
+    border: 1px solid var(--mist, rgba(255, 255, 255, 0.1));
+    border-radius: var(--radius-lg, 16px);
+    padding: 20px;
+    box-shadow: var(--shadow-sm, 0 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+/* Prevent nested cards from appearing too heavy */
+
+[data-testid="stVerticalBlockBorderWrapper"]
+[data-testid="stVerticalBlockBorderWrapper"] {
+    box-shadow: none;
+    background: rgba(26, 38, 66, 0.72);
+}
+
+
+/* -----------------------------------------------------
+   BUTTONS
+   ----------------------------------------------------- */
+
+.stButton > button,
+.stFormSubmitButton > button,
+[data-testid="stDownloadButton"] > button {
+    background: linear-gradient(100deg, #7c3aed, #0891b2);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radius-sm, 8px);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    min-height: 44px;
+    padding: 10px 22px;
+    box-shadow: 0 4px 12px rgba(91, 75, 219, 0.22);
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        filter 0.18s ease;
+}
+
+/* Hover effect */
+
+.stButton > button:hover,
+.stFormSubmitButton > button:hover,
+[data-testid="stDownloadButton"] > button:hover {
+    color: #ffffff;
+    filter: brightness(1.06);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(91, 75, 219, 0.3);
+}
+
+/* Click effect */
+
+.stButton > button:active,
+.stFormSubmitButton > button:active,
+[data-testid="stDownloadButton"] > button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(91, 75, 219, 0.25);
+}
+
+/* Keyboard accessibility */
+
+.stButton > button:focus-visible,
+.stFormSubmitButton > button:focus-visible,
+[data-testid="stDownloadButton"] > button:focus-visible {
+    outline: 2px solid #22d3ee;
+    outline-offset: 3px;
+    box-shadow: 0 4px 12px rgba(91, 75, 219, 0.22);
+}
+
+/* Disabled buttons */
+
+.stButton > button:disabled,
+.stFormSubmitButton > button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}

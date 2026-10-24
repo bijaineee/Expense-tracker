@@ -1,0 +1,12 @@
+# Database (keeps your personal expense data out of GitHub)
+expense.db
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+.vscode/
